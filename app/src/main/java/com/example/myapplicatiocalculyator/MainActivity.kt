@@ -43,5 +43,5 @@ class MainActivity : AppCompatActivity() {
         soundPool.release()
     }
 }
-// test
+//app fur mute people
 
