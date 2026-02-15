@@ -1,5 +1,4 @@
-package com.example.yourpackage
-
+package com.example.myapplicatiocalculyator
 import android.media.SoundPool
 import android.os.Bundle
 import android.view.View
