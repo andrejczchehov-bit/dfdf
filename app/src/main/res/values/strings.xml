@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_names">Cyber Lock</string>
-
+    <string name="app_name">PhoneApp</string>
     <string name="open">OPEN</string>
     <string name="close">CLOSE</string>
 
@@ -13,7 +12,4 @@
     <string name="digit_7">7</string>
     <string name="digit_8">8</string>
     <string name="digit_9">9</string>
-    <string name="app_name">asd</string>
 </resources>
-
-
