@@ -12,4 +12,6 @@
     <string name="digit_7">7</string>
     <string name="digit_8">8</string>
     <string name="digit_9">9</string>
+    <string name="entered_section">Вы вошли в %1$s</string>
+
 </resources>

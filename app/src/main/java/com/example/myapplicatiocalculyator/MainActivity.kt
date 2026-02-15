@@ -45,7 +45,8 @@ class MainActivity : AppCompatActivity() {
         findViewById<NavigationView>(R.id.navigationView)
             .setNavigationItemSelectedListener {
                 drawer.closeDrawers()
-                sectionText.text = "Вы вошли в ${it.title}"
+                sectionText.text = getString(R.string.entered_section, it.title)
+
                 sectionText.visibility = View.VISIBLE
                 mainLayout.visibility = View.GONE
                 true
