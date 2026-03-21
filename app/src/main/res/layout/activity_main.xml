@@ -6,39 +6,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- ОСНОВНОЙ КОНТЕНТ -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- TOOLBAR -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
             app:layout_constraintTop_toTopOf="parent"
-            app:navigationIcon="@android:drawable/ic_menu_sort_by_size"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:navigationIcon="@android:drawable/ic_menu_sort_by_size" />
 
-        <!-- КНОПКА ЗАМОК -->
         <ImageButton
             android:id="@+id/btnLock"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@android:color/transparent"
             android:src="@mipmap/ic_launcher"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="Замок"
             app:layout_constraintTop_toTopOf="@id/toolbar"
-            app:layout_constraintBottom_toBottomOf="@id/toolbar"/>
+            app:layout_constraintBottom_toBottomOf="@id/toolbar"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-        <!-- КОНТЕНТ -->
         <FrameLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@id/toolbar"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
-            <!-- ГЛАВНЫЙ ЭКРАН -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/mainLayout"
                 android:layout_width="match_parent"
@@ -52,68 +52,115 @@
                     android:columnCount="3"
                     android:useDefaultMargins="true"
                     app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/bottomButtons"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent">
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintVertical_bias="0.4">
 
-                    <Button android:id="@+id/btn1" android:text="@string/digit_1"/>
-                    <Button android:id="@+id/btn2" android:text="@string/digit_2"/>
-                    <Button android:id="@+id/btn3" android:text="@string/digit_3"/>
-                    <Button android:id="@+id/btn4" android:text="@string/digit_4"/>
-                    <Button android:id="@+id/btn5" android:text="@string/digit_5"/>
-                    <Button android:id="@+id/btn6" android:text="@string/digit_6"/>
-                    <Button android:id="@+id/btn7" android:text="@string/digit_7"/>
-                    <Button android:id="@+id/btn8" android:text="@string/digit_8"/>
-                    <Button android:id="@+id/btn9" android:text="@string/digit_9"/>
+                    <Button
+                        android:id="@+id/btn1"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:text="@string/digit_1" />
+
+                    <Button
+                        android:id="@+id/btn2"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:text="@string/digit_2" />
+
+                    <Button
+                        android:id="@+id/btn3"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:text="@string/digit_3" />
+
+                    <Button
+                        android:id="@+id/btn4"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:text="@string/digit_4" />
+
+                    <Button
+                        android:id="@+id/btn5"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:text="@string/digit_5" />
+
+                    <Button
+                        android:id="@+id/btn6"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:text="@string/digit_6" />
+
+                    <Button
+                        android:id="@+id/btn7"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:text="@string/digit_7" />
+
+                    <Button
+                        android:id="@+id/btn8"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:text="@string/digit_8" />
+
+                    <Button
+                        android:id="@+id/btn9"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:text="@string/digit_9" />
                 </GridLayout>
 
                 <LinearLayout
-                    style="?android:attr/buttonBarStyle"
+                    android:id="@+id/bottomButtons"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     app:layout_constraintTop_toBottomOf="@id/keypad"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent">
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintVertical_bias="0.1">
 
                     <Button
                         android:id="@+id/btnOpen"
-                        style="?android:attr/buttonBarButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="@string/open"
                         android:backgroundTint="#4CAF50"
                         android:textColor="@android:color/white" />
 
                     <Button
-                        style="?android:attr/buttonBarButtonStyle"
                         android:id="@+id/btnClose"
-                        android:text="@string/close"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
+                        android:text="@string/close"
                         android:backgroundTint="#F44336"
-                        android:textColor="@android:color/white"/>
-
+                        android:textColor="@android:color/white" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- ЭКРАН ПУНКТОВ -->
             <TextView
                 android:id="@+id/sectionText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@android:color/white"
                 android:gravity="center"
                 android:textSize="24sp"
-                android:background="@android:color/white"
-                android:visibility="gone"/>
+                android:visibility="gone" />
         </FrameLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- МЕНЮ -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:menu="@menu/drawer_menu"/>
+        app:menu="@menu/drawer_menu" />
+
 </androidx.drawerlayout.widget.DrawerLayout>
 
 
