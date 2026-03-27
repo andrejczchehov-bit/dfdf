@@ -16,8 +16,12 @@ class MainActivity : AppCompatActivity() {
 
     private var soundsLoaded = false
     private lateinit var soundPool: SoundPool
+
     private var soundMenu = 0
     private var soundLock = 0
+
+    // 🔊 звуки 1–11
+    private lateinit var tones: IntArray
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,14 +34,27 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
 
-        // 🔊 создаём SoundPool
-        soundPool = SoundPool.Builder().setMaxStreams(5).build()
+        soundPool = SoundPool.Builder().setMaxStreams(12).build()
 
-        // 🔊 загружаем звуки
+        // 🔊 загружаем меню и замок
         soundMenu = soundPool.load(this, R.raw.tone_menu, 1)
         soundLock = soundPool.load(this, R.raw.tone_lock, 1)
 
-        // 🔊 проверка загрузки
+        // 🔊 загружаем tone_1 … tone_11
+        tones = intArrayOf(
+            soundPool.load(this, R.raw.tone_1, 1),
+            soundPool.load(this, R.raw.tone_2, 1),
+            soundPool.load(this, R.raw.tone_3, 1),
+            soundPool.load(this, R.raw.tone_4, 1),
+            soundPool.load(this, R.raw.tone_5, 1),
+            soundPool.load(this, R.raw.tone_6, 1),
+            soundPool.load(this, R.raw.tone_7, 1),
+            soundPool.load(this, R.raw.tone_8, 1),
+            soundPool.load(this, R.raw.tone_9, 1),
+            soundPool.load(this, R.raw.tone_10, 1), // OPEN
+            soundPool.load(this, R.raw.tone_11, 1)  // CLOSE
+        )
+
         soundPool.setOnLoadCompleteListener { _, _, _ ->
             soundsLoaded = true
         }
@@ -59,19 +76,32 @@ class MainActivity : AppCompatActivity() {
             mainLayout.visibility = View.VISIBLE
         }
 
-        // 🔊 КНОПКИ (1–9, open, close)
-        val buttons = listOf(
+        // 🔊 кнопки 1–9
+        val digitButtons = listOf(
             R.id.btn1, R.id.btn2, R.id.btn3,
             R.id.btn4, R.id.btn5, R.id.btn6,
-            R.id.btn7, R.id.btn8, R.id.btn9,
-            R.id.btnOpen, R.id.btnClose
+            R.id.btn7, R.id.btn8, R.id.btn9
         )
 
-        for (id in buttons) {
-            findViewById<Button>(id).setOnClickListener {
+        for (i in digitButtons.indices) {
+            findViewById<Button>(digitButtons[i]).setOnClickListener {
                 if (soundsLoaded) {
-                    soundPool.play(soundMenu, 1f, 1f, 1, 0, 1f)
+                    soundPool.play(tones[i], 1f, 1f, 1, 0, 1f)
                 }
+            }
+        }
+
+        // 🔊 OPEN (tone_10)
+        findViewById<Button>(R.id.btnOpen).setOnClickListener {
+            if (soundsLoaded) {
+                soundPool.play(tones[9], 1f, 1f, 1, 0, 1f)
+            }
+        }
+
+        // 🔊 CLOSE (tone_11)
+        findViewById<Button>(R.id.btnClose).setOnClickListener {
+            if (soundsLoaded) {
+                soundPool.play(tones[10], 1f, 1f, 1, 0, 1f)
             }
         }
 
