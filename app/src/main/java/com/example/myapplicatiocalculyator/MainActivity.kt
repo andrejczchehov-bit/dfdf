@@ -1,4 +1,5 @@
 package com.example.myapplicatiocalculyator
+
 import android.media.SoundPool
 import android.os.Bundle
 import android.view.View
@@ -12,7 +13,6 @@ import com.google.android.material.navigation.NavigationView
 import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
-
 
     private var soundsLoaded = false
     private lateinit var soundPool: SoundPool
@@ -30,63 +30,48 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
 
-        soundPool = SoundPool.Builder().setMaxStreams(2).build()
+        // 🔊 создаём SoundPool
+        soundPool = SoundPool.Builder().setMaxStreams(5).build()
 
+        // 🔊 загружаем звуки
+        soundMenu = soundPool.load(this, R.raw.tone_menu, 1)
+        soundLock = soundPool.load(this, R.raw.tone_lock, 1)
+
+        // 🔊 проверка загрузки
         soundPool.setOnLoadCompleteListener { _, _, _ ->
             soundsLoaded = true
         }
 
+        // 🔊 меню
         toolbar.setNavigationOnClickListener {
-            soundPool.play(soundMenu, 0.3f, 0.3f, 1, 0, 1f)
+            if (soundsLoaded) {
+                soundPool.play(soundMenu, 0.3f, 0.3f, 1, 0, 1f)
+            }
             drawer.openDrawer(GravityCompat.START)
         }
 
+        // 🔊 замок
         findViewById<ImageButton>(R.id.btnLock).setOnClickListener {
-            soundPool.play(soundLock, 0.3f, 0.3f, 1, 0, 1f)
+            if (soundsLoaded) {
+                soundPool.play(soundLock, 0.3f, 0.3f, 1, 0, 1f)
+            }
             sectionText.visibility = View.GONE
             mainLayout.visibility = View.VISIBLE
-            findViewById<Button>(R.id.btn1).setOnClickListener {
-                if (soundsLoaded) soundPool.play(soundMenu, 1f, 1f, 1, 0, 1f)
-            }
+        }
 
-            findViewById<Button>(R.id.btn2).setOnClickListener {
-                if (soundsLoaded) soundPool.play(soundMenu, 1f, 1f, 1, 0, 1f)
-            }
+        // 🔊 КНОПКИ (1–9, open, close)
+        val buttons = listOf(
+            R.id.btn1, R.id.btn2, R.id.btn3,
+            R.id.btn4, R.id.btn5, R.id.btn6,
+            R.id.btn7, R.id.btn8, R.id.btn9,
+            R.id.btnOpen, R.id.btnClose
+        )
 
-            findViewById<Button>(R.id.btn3).setOnClickListener {
-                if (soundsLoaded) soundPool.play(soundMenu, 1f, 1f, 1, 0, 1f)
-            }
-
-            findViewById<Button>(R.id.btn4).setOnClickListener {
-                if (soundsLoaded) soundPool.play(soundMenu, 1f, 1f, 1, 0, 1f)
-            }
-
-            findViewById<Button>(R.id.btn5).setOnClickListener {
-                if (soundsLoaded) soundPool.play(soundMenu, 1f, 1f, 1, 0, 1f)
-            }
-
-            findViewById<Button>(R.id.btn6).setOnClickListener {
-                if (soundsLoaded) soundPool.play(soundMenu, 1f, 1f, 1, 0, 1f)
-            }
-
-            findViewById<Button>(R.id.btn7).setOnClickListener {
-                if (soundsLoaded) soundPool.play(soundMenu, 1f, 1f, 1, 0, 1f)
-            }
-
-            findViewById<Button>(R.id.btn8).setOnClickListener {
-                if (soundsLoaded) soundPool.play(soundMenu, 1f, 1f, 1, 0, 1f)
-            }
-
-            findViewById<Button>(R.id.btn9).setOnClickListener {
-                if (soundsLoaded) soundPool.play(soundMenu, 1f, 1f, 1, 0, 1f)
-            }
-
-            findViewById<Button>(R.id.btnOpen).setOnClickListener {
-                if (soundsLoaded) soundPool.play(soundMenu, 1f, 1f, 1, 0, 1f)
-            }
-
-            findViewById<Button>(R.id.btnClose).setOnClickListener {
-                if (soundsLoaded) soundPool.play(soundMenu, 1f, 1f, 1, 0, 1f)
+        for (id in buttons) {
+            findViewById<Button>(id).setOnClickListener {
+                if (soundsLoaded) {
+                    soundPool.play(soundMenu, 1f, 1f, 1, 0, 1f)
+                }
             }
         }
 
