@@ -61,55 +61,55 @@
                     <Button
                         android:id="@+id/btn1"
                         android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_height="50dp"
                         android:text="@string/digit_1" />
 
                     <Button
                         android:id="@+id/btn2"
                         android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_height="50dp"
                         android:text="@string/digit_2" />
 
                     <Button
                         android:id="@+id/btn3"
                         android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_height="50dp"
                         android:text="@string/digit_3" />
 
                     <Button
                         android:id="@+id/btn4"
                         android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_height="50dp"
                         android:text="@string/digit_4" />
 
                     <Button
                         android:id="@+id/btn5"
                         android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_height="50dp"
                         android:text="@string/digit_5" />
 
                     <Button
                         android:id="@+id/btn6"
                         android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_height="50dp"
                         android:text="@string/digit_6" />
 
                     <Button
                         android:id="@+id/btn7"
                         android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_height="50dp"
                         android:text="@string/digit_7" />
 
                     <Button
                         android:id="@+id/btn8"
                         android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_height="50dp"
                         android:text="@string/digit_8" />
 
                     <Button
                         android:id="@+id/btn9"
                         android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_height="50dp"
                         android:text="@string/digit_9" />
                 </GridLayout>
 
