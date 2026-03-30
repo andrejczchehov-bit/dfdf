@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/p1" android:title="Пункт 1"/>
-    <item android:id="@+id/p2" android:title="Пункт 2"/>
-    <item android:id="@+id/p3" android:title="Пункт 3"/>
-    <item android:id="@+id/p4" android:title="Пункт 4"/>
-    <item android:id="@+id/p5" android:title="Пункт 5"/>
+    <item android:id="@+id/p1" android:title="@string/lock_default"/>
+    <item android:id="@+id/p2" android:title="@string/lock_group"/>
+    <item android:id="@+id/p3" android:title="@string/language"/>
+    <item android:id="@+id/p4" android:title="@string/settings_program"/>
+    <item android:id="@+id/p5" android:title="@string/instruction"/>
+
 </menu>
