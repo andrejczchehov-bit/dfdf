@@ -23,14 +23,16 @@
 
         <ImageButton
             android:id="@+id/btnLock"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
             android:background="@android:color/transparent"
-            android:src="@mipmap/ic_launcher"
             android:contentDescription="Замок"
-            app:layout_constraintTop_toTopOf="@id/toolbar"
+            android:src="@mipmap/ic_launcher"
             app:layout_constraintBottom_toBottomOf="@id/toolbar"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="@+id/toolbar"
+            app:layout_constraintTop_toTopOf="@id/toolbar"
+            app:layout_constraintVertical_bias="0.2"
+            app:layout_constraintHorizontal_bias="0.0"/>
 
         <FrameLayout
             android:layout_width="0dp"
