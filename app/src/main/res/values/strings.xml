@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PhoneApp</string>
+    <string name="app_name">Приложение для немых</string>
     <string name="open">OPEN</string>
     <string name="close">CLOSE</string>
 
@@ -12,7 +12,6 @@
     <string name="digit_7">7</string>
     <string name="digit_8">8</string>
     <string name="digit_9">9</string>
-    <string name="entered_section">Вы вошли в %1$s</string>
     <string name="lock_default">Замок по умолчанию</string>
     <string name="lock_group">Группа замков</string>
     <string name="language">Язык</string>

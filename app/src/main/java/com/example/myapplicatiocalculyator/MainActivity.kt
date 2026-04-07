@@ -108,7 +108,13 @@ class MainActivity : AppCompatActivity() {
         findViewById<NavigationView>(R.id.navigationView)
             .setNavigationItemSelectedListener {
                 drawer.closeDrawers()
-                sectionText.text = getString(R.string.entered_section, it.title)
+                when (it.itemId) {
+                    R.id.p1 -> sectionText.text = "Фразы по умолчанию"
+                    R.id.p2 -> sectionText.text = "Список фраз"
+                    R.id.p3 -> sectionText.text = "Выбор языка 🌍"
+                    R.id.p4 -> sectionText.text = "Настройки ⚙️"
+                    R.id.p5 -> sectionText.text = "Инструкция 📖"
+                }
 
                 sectionText.visibility = View.VISIBLE
                 mainLayout.visibility = View.GONE

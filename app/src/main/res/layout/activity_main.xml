@@ -14,7 +14,7 @@
             android:id="@+id/toolbar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="#673AB7"
+            android:background="#53438A"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,7 @@
         <ImageButton
             android:id="@+id/btnLock"
             android:layout_width="50dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:background="@android:color/transparent"
             android:contentDescription="Замок"
             android:src="@mipmap/ic_launcher"
