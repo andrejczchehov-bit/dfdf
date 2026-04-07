@@ -12,8 +12,8 @@
     <string name="digit_7">7</string>
     <string name="digit_8">8</string>
     <string name="digit_9">9</string>
-    <string name="lock_default">Замок по умолчанию</string>
-    <string name="lock_group">Группа замков</string>
+    <string name="lock_default">Фразы по умолчанию</string>
+    <string name="lock_group">Список фраз</string>
     <string name="language">Язык</string>
     <string name="settings_program">Настройки программы</string>
     <string name="instruction">Инструкция</string>
