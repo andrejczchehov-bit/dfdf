@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         val mainLayout = findViewById<View>(R.id.mainLayout)
         val sectionText = findViewById<TextView>(R.id.sectionText)
 
-        setSupportActionBar(toolbar)
+        supportActionBar?.title = ""
 
         soundPool = SoundPool.Builder().setMaxStreams(12).build()
 
