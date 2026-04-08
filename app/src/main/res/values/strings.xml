@@ -13,6 +13,19 @@
     <string name="digit_8">8</string>
     <string name="digit_9">9</string>
     <string name="lock_default">Фразы по умолчанию</string>
+    <string name="lock_default_text">
+        Фразы по кнопкам:\n
+        \n1.Я не могу говорить
+\n2.Мне нужна помощь
+\n3.Передайте за проезд
+\n4.Кто последний в очереди
+\n5.Мне нужен доктор
+\n6.Здраствуйте
+\n7.Досвидание
+\n8.Спасибо
+\n9.Понял
+
+</string>
     <string name="lock_group">Список фраз</string>
     <string name="language">Язык</string>
     <string name="settings_program">Настройки программы</string>

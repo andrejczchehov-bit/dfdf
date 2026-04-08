@@ -149,10 +149,10 @@
                 android:id="@+id/sectionText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:padding="16dp"
+                android:textSize="18sp"
                 android:background="@android:color/white"
-                android:gravity="center"
-                android:textSize="24sp"
-                android:visibility="gone" />
+                android:visibility="gone"/>
         </FrameLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tones: IntArray
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        soundPool = SoundPool.Builder().setMaxStreams(5).build()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -108,16 +109,19 @@ class MainActivity : AppCompatActivity() {
         findViewById<NavigationView>(R.id.navigationView)
             .setNavigationItemSelectedListener {
                 drawer.closeDrawers()
+
                 when (it.itemId) {
-                    R.id.p1 -> sectionText.text = "Фразы по умолчанию"
-                    R.id.p2 -> sectionText.text = "Список фраз"
-                    R.id.p3 -> sectionText.text = "Выбор языка 🌍"
-                    R.id.p4 -> sectionText.text = "Настройки ⚙️"
-                    R.id.p5 -> sectionText.text = "Инструкция 📖"
+                    R.id.p1 -> sectionText.text = getString(R.string.lock_default_text)
+                    R.id.p2 -> sectionText.text = ""
+                    R.id.p3 -> sectionText.text = ""
+                    R.id.p4 -> sectionText.text = ""
+                    R.id.p5 -> sectionText.text = ""
+                    else -> sectionText.text = ""
                 }
 
                 sectionText.visibility = View.VISIBLE
                 mainLayout.visibility = View.GONE
+
                 true
             }
     }
