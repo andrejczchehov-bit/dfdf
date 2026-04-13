@@ -1,5 +1,5 @@
 package com.example.myapplicatiocalculyator
-
+import androidx.activity.OnBackPressedCallback
 import android.media.SoundPool
 import android.os.Bundle
 import android.view.View
@@ -24,6 +24,24 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tones: IntArray
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        onBackPressedDispatcher.addCallback(this,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+
+                    val mainLayout = findViewById<View>(R.id.mainLayout)
+                    val sectionText = findViewById<TextView>(R.id.sectionText)
+
+                    if (mainLayout.visibility == View.GONE) {
+                        sectionText.visibility = View.GONE
+                        mainLayout.visibility = View.VISIBLE
+                    } else {
+                        finish()
+                    }
+                }
+            }
+        )
+
         soundPool = SoundPool.Builder().setMaxStreams(5).build()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -32,6 +50,8 @@ class MainActivity : AppCompatActivity() {
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         val mainLayout = findViewById<View>(R.id.mainLayout)
         val sectionText = findViewById<TextView>(R.id.sectionText)
+
+
 
         supportActionBar?.title = ""
 
@@ -131,3 +151,4 @@ class MainActivity : AppCompatActivity() {
         soundPool.release()
     }
 }
+
